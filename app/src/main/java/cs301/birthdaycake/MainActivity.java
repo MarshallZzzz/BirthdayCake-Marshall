@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.SeekBar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         CompoundButton candleSwitch = findViewById(R.id.Candles);
         candleSwitch.setOnCheckedChangeListener(controls);
 
+        SeekBar seekAmt = findViewById(R.id.seekBar);
+        seekAmt.setOnSeekBarChangeListener(controls);
 
         
     }
