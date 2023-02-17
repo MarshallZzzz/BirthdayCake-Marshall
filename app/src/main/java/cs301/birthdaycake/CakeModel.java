@@ -45,4 +45,6 @@ public class CakeModel {
     public boolean getCandle(){
         return this.hasCandle;
     }
+
+
 }

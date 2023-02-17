@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         seekAmt.setOnSeekBarChangeListener(controls);
 
         ckvws.setOnTouchListener(controls);
-        
+
     }
 
     public void goodbye(View button){

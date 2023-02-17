@@ -16,21 +16,19 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         }
 
     public void onClick(View v){
-        Log.d("message", "ERROR 1");
+        Log.d("onClick1", "1st onclick");
         sponge.setLit(false);
         looks.invalidate();
-
-
     }
 
     public void onCheckedChanged(CompoundButton v, boolean b){
-        Log.d("Candles", "ERROR 2");
+        Log.d("Candles", "On / off");
         sponge.setCandle(b);
         looks.invalidate();
     }
 
     public void onProgressChanged(SeekBar sb, int progress, boolean b) {
-        Log.d("SeekBar", "ERROR 3");
+        Log.d("SeekBar", "Slider");
         sponge.setNum(progress);
         looks.invalidate();
     }
@@ -46,7 +44,6 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         looks.invalidate();
         return false;
     }
-
 }
 
 
