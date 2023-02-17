@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         SeekBar seekAmt = findViewById(R.id.seekBar);
         seekAmt.setOnSeekBarChangeListener(controls);
 
+        ckvws.setOnTouchListener(controls);
         
     }
 
