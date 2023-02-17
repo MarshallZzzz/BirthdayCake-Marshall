@@ -6,6 +6,10 @@ public class CakeModel {
     public boolean frost = true;
     public boolean hasCandle = true;
 
+    public boolean hasTouched = false;
+    public float Xcoor;
+    public float Ycoor;
+
     //setter and getter method litty
     public void setLit(boolean b){
         this.litty = b;
@@ -41,4 +45,6 @@ public class CakeModel {
     public boolean getCandle(){
         return this.hasCandle;
     }
+
+
 }

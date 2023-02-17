@@ -17,6 +17,8 @@ public class CakeView extends SurfaceView {
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
 
+    Paint coordinatePaint = new Paint();
+
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
         and adapting to different tablets' screen sizes and resolutions.  I've deliberately
@@ -34,6 +36,9 @@ public class CakeView extends SurfaceView {
     public static final float outerFlameRadius = 30.0f;
     public static final float innerFlameRadius = 15.0f;
 
+    public String coorTxt;
+
+    public boolean ifTouched = false;
     private CakeModel model;
 
 
@@ -60,6 +65,9 @@ public class CakeView extends SurfaceView {
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
+        coordinatePaint.setColor(0xFFFF0000); //red
+        coordinatePaint.setTextSize(100.0f);
+
 
         setBackgroundColor(Color.WHITE);  //better than black default
 
@@ -81,7 +89,7 @@ public class CakeView extends SurfaceView {
             canvas.drawRect(left, bottom - candleHeight, left + candleWidth, bottom, candlePaint);
 
 
-            if (model.getLit() == true) {
+            if (true == model.getLit()) {
                 //draw the outer flame
                 float flameCenterX = left + candleWidth / 2;
                 float flameCenterY = bottom - wickHeight - candleHeight - outerFlameRadius / 3;
@@ -99,6 +107,11 @@ public class CakeView extends SurfaceView {
             canvas.drawRect(wickLeft, wickTop, wickLeft + wickWidth, wickTop + wickHeight, wickPaint);
         }
     }
+
+    public void drawCoor(Canvas canvas){
+        coorTxt = "X: " + Float.toString(model.Xcoor) + " Y: " + Float.toString(model.Ycoor);
+    }
+
 
     /**
      * onDraw is like "paint" in a regular Java program.  While a Canvas is
@@ -135,6 +148,10 @@ public class CakeView extends SurfaceView {
         for(int i = 1; i<= model.getNum(); i++) {
                     drawCandle(canvas, cakeLeft + i * (cakeWidth / (model.getNum()+ 1)) - candleWidth / 2, cakeTop);
         }
+
+        drawCoor(canvas);
+        canvas.drawText(coorTxt, 1300, 1100, coordinatePaint);
+
 
     }//onDraw
 
