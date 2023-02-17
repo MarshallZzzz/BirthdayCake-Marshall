@@ -39,6 +39,7 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
 
     public boolean onTouch(View v, MotionEvent event){
         Log.d("onTouchMETHOD", "2nd Onclick");
+        sponge.hasTouched = true;
         sponge.Xcoor = event.getX();
         sponge.Ycoor = event.getY();
         looks.invalidate();

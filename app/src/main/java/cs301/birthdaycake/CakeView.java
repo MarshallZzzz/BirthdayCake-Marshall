@@ -157,8 +157,9 @@ public class CakeView extends SurfaceView {
         for(int i = 1; i<= model.getNum(); i++) {
                     drawCandle(canvas, cakeLeft + i * (cakeWidth / (model.getNum()+ 1)) - candleWidth / 2, cakeTop);
         }
-        drawBalloon(canvas, model.Xcoor, model.Ycoor);
-
+        if(true == model.hasTouched) {
+            drawBalloon(canvas, model.Xcoor, model.Ycoor);
+        }
 
         drawCoor(canvas);
         canvas.drawText(coorTxt, 1300, 1100, coordinatePaint);
